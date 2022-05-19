@@ -92,10 +92,10 @@ Users will be able to:
 
 <p style="color:#ed8144;font-size:18px;" id="frontend">Frontend</p>
 
-![Login](/UI/login.png)
-![Signup](/UI/signup.png)
-![main-portal](/UI/return-order-portal.png)
-![ordered](/UI/ordered.png)
+![Login](UI/login.png)
+![Signup](UI/signup.png)
+![main-portal](UI/return-order-portal.png)
+![ordered](UI/ordered.png)
 
 <hr>
 
