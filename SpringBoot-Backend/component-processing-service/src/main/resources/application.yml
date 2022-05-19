@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: component-processing-service
+  error:
+    include-message: true
+
+server:
+  port: 8993
+
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+  instance:
+    instanceId: ${spring.application.name}:${server.port}:${spring.application.instance_id:${random.value}}

@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: "packaging-and-delivery-service"
+  error:
+    include-message: "true"
+
+server:
+  port: 8996
+
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: false
+  instance:
+    instanceId: ${spring.application.name}:${server.port}:${spring.application.instance_id:${random.value}}

@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: api-gateway-service
+  cloud:
+    loadbalancer:
+      ribbon:
+        enabled: false
+    gateway:
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedMethods:
+              - GET
+              - POST
+            allowedHeaders: "*"
+      discovery:
+        locator:
+          enabled: true
+          lowerCaseServiceId: true
+
+server:
+  port: 8991
+
+eureka:
+  client:
+  instance:
+    instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+
