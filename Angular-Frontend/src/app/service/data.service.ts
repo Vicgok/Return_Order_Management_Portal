@@ -1,4 +1,3 @@
-import { HttpErrorResponse } from '@angular/common/http'
 import { Injectable } from '@angular/core'
 import { ErrorData } from '../model/error-data.model'
 import { OrderComponent } from '../model/order-component.model'
