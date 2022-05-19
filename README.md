@@ -21,7 +21,7 @@
   - [About](#about)
   - [Build details](#build-details)
   - [Try it now](#run-application)
-  - [Glimps of UI](#frontend)
+  - [Glimpse of UI](#frontend)
 
 - [Author](#author)
 
@@ -59,7 +59,7 @@ Users will be able to:
 
 - <p style="font-size:16px" > Import project in your favourite IDE</p>
 
-  - Cd to angular directory and start the app and run this command
+  - Cd to angular directory and run this command to start the app
 
     ```
     npm install
@@ -101,5 +101,5 @@ Users will be able to:
 
 <p style="color:#ed8144;font-size:18px;" id="author">Author</p>
 
-- Name : [Vigneshwaraa K](https://gitlab.com/Vicgok/return_order_management_webapp)
+- Name : [Vigneshwaraa K](http://git03.iiht.tech/874382)
 - Employee_ID : 874382
