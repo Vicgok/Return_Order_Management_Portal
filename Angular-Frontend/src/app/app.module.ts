@@ -20,23 +20,26 @@ import { UserSignupComponent } from './components/user-signup/user-signup.compon
     CommonModule,
     ReactiveFormsModule,
     HttpClientModule,
-    RouterModule.forRoot([
-      {
-        path: '',
-        component: HomeComponent,
-        canActivate: [RedirectToLoginUserService],
-      },
-      {
-        path: 'login',
-        component: UserLoginComponent,
-        canActivate: [LoginCheckGuardService],
-      },
-      {
-        path: 'signup',
-        component: UserSignupComponent,
-        canActivate: [LoginCheckGuardService],
-      },
-    ]),
+    RouterModule.forRoot(
+      [
+        {
+          path: '',
+          component: HomeComponent,
+          canActivate: [RedirectToLoginUserService],
+        },
+        {
+          path: 'login',
+          component: UserLoginComponent,
+          canActivate: [LoginCheckGuardService],
+        },
+        {
+          path: 'signup',
+          component: UserSignupComponent,
+          canActivate: [LoginCheckGuardService],
+        },
+      ],
+      { useHash: true }
+    ),
   ],
   providers: [],
 
