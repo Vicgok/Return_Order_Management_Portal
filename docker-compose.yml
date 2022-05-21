@@ -1,0 +1,77 @@
+version: '2'
+services:
+    discovery-service:
+        build: ./SpringBoot-Backend/discovery-server
+        ports:
+            -   8990:8761
+
+    config-service:
+        build: ./SpringBoot-Backend/configuration-server
+        ports:
+            -   8992:8995
+        depends_on:
+            -   discovery-service
+        environment:
+            eureka.client.enabled: 'true'
+            eureka.client.serviceUrl.defaultZone: http://discovery-service:8761/eureka
+
+    gateway-service:
+        build: ./SpringBoot-Backend/api-gateway-service
+        ports:
+            -   8991:8991
+        depends_on:
+            -   discovery-service
+            -   config-service
+        environment:
+            eureka.client.enabled: 'true'
+            eureka.client.serviceUrl.defaultZone: http://discovery-service:8761/eureka
+
+    auth-service:
+        build: ./SpringBoot-Backend/authorization-service
+        ports:
+            -   8996:8992
+        depends_on:
+            -   discovery-service
+            -   config-service
+            -   gateway-service
+        environment:
+            eureka.client.enabled: 'true'
+            eureka.client.serviceUrl.defaultZone: http://discovery-service:8761/eureka
+
+    component-process-service:
+        build: ./SpringBoot-Backend/component-processing-service
+        ports:
+            -   8998:8993
+        depends_on:
+            -   discovery-service
+            -   config-service
+            -   gateway-service
+            -   auth-service
+        environment:
+            eureka.client.enabled: 'true'
+            eureka.client.serviceUrl.defaultZone: http://discovery-service:8761/eureka
+
+    package-delivery-service:
+        build: ./SpringBoot-Backend/packaging-and-delivery-service
+        ports:
+            -   9000:8996
+        depends_on:
+            -   discovery-service
+            -   config-service
+            -   gateway-service
+            -   auth-service
+        environment:
+            eureka.client.enabled: 'true'
+            eureka.client.serviceUrl.defaultZone: http://discovery-service:8761/eureka
+
+    return-order-portal-app:
+        build: ./angular-frontend
+        ports:
+            -   8080:80
+        depends_on:
+            -   discovery-service
+            -   config-service
+            -   gateway-service
+            -   auth-service
+            -   component-process-service
+            -   package-delivery-service
