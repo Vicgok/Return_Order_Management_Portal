@@ -1,4 +1,4 @@
-package com.returnorder.managment.packaginganddeliveryservice.packaginganddeliveryservice.exception;
+package com.returnorder.managment.packaginganddeliveryservice.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

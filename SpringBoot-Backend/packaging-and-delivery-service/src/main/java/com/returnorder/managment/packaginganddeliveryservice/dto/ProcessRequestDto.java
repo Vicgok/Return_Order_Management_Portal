@@ -1,4 +1,4 @@
-package com.returnorder.managment.packaginganddeliveryservice.packaginganddeliveryservice.dto;
+package com.returnorder.managment.packaginganddeliveryservice.dto;
 
 
 import lombok.AllArgsConstructor;

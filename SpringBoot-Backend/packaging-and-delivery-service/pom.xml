@@ -55,7 +55,7 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
-					<mainClass>com.returnorder.managment.packaginganddeliveryservice.packaginganddeliveryservice.PackagingAndDeliveryServiceApplication</mainClass>
+					<mainClass>com.returnorder.managment.packaginganddeliveryservice.PackagingAndDeliveryServiceApplication</mainClass>
 				</configuration>
 			</plugin>
 		</plugins>
