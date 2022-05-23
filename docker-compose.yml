@@ -16,7 +16,7 @@ services:
             eureka.client.serviceUrl.defaultZone: http://discovery-service:8761/eureka
 
     gateway-service:
-        image: vicgok/api-gateway-service:01
+        image: vicgok/api-gateway-service:03
         ports:
             -   8991:8991
         depends_on:
@@ -27,7 +27,7 @@ services:
             eureka.client.serviceUrl.defaultZone: http://discovery-service:8761/eureka
 
     auth-service:
-        image: vicgok/auth-service:01
+        image: vicgok/auth-service:02
         ports:
             -   8996:8992
         depends_on:
@@ -65,7 +65,7 @@ services:
             eureka.client.serviceUrl.defaultZone: http://discovery-service:8761/eureka
 
     return-order-portal-app:
-        image: vicgok/return-order-portal-app:1
+        image: vicgok/return-order-portal-app:01
         ports:
             -   8080:80
         depends_on:
