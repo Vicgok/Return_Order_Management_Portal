@@ -44,6 +44,7 @@ node_modules
 npm-debug.log
 yarn-error.log
 .angular
+dist/
 # IDEs and editors
 .idea/
 .c9/
@@ -67,7 +68,7 @@ yarn-error.log
 /libpeerconnection.log
 testem.log
 /typings
-
+JARs_Return_Order_Managment_Portal
 # System files
 .DS_Store
 Thumbs.db
@@ -77,4 +78,4 @@ Thumbs.db
 .vscode
 .browserslistrc
 .editorconfig
-dist/
+
