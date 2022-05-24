@@ -1,12 +1,12 @@
 version: '2'
 services:
     discovery-service:
-        image: vicgok/discovery-service:01
+        image: vicgok/discovery-service:build-01
         ports:
             -   8990:8761
 
     config-service:
-        image: vicgok/config-service:01
+        image: vicgok/config-service:build-01
         ports:
             -   8992:8995
         depends_on:
@@ -16,7 +16,7 @@ services:
             eureka.client.serviceUrl.defaultZone: http://discovery-service:8761/eureka
 
     gateway-service:
-        image: vicgok/api-gateway-service:03
+        image: vicgok/api-gateway-service:build-01
         ports:
             -   8991:8991
         depends_on:
@@ -27,7 +27,7 @@ services:
             eureka.client.serviceUrl.defaultZone: http://discovery-service:8761/eureka
 
     auth-service:
-        image: vicgok/auth-service:02
+        image: vicgok/auth-service:build-02
         ports:
             -   8996:8992
         depends_on:
@@ -39,7 +39,7 @@ services:
             eureka.client.serviceUrl.defaultZone: http://discovery-service:8761/eureka
 
     component-process-service:
-        image: vicgok/component-process-service:01
+        image: vicgok/component-process-service:build-01
         ports:
             -   8998:8993
         depends_on:
@@ -52,7 +52,7 @@ services:
             eureka.client.serviceUrl.defaultZone: http://discovery-service:8761/eureka
 
     package-delivery-service:
-        image: vicgok/package-service:01
+        image: vicgok/package-service:build-01
         ports:
             -   9000:8996
         depends_on:
@@ -63,15 +63,3 @@ services:
         environment:
             eureka.client.enabled: 'true'
             eureka.client.serviceUrl.defaultZone: http://discovery-service:8761/eureka
-
-    return-order-portal-app:
-        image: vicgok/return-order-portal-app:01
-        ports:
-            -   8080:80
-        depends_on:
-            -   discovery-service
-            -   config-service
-            -   gateway-service
-            -   auth-service
-            -   component-process-service
-            -   package-delivery-service

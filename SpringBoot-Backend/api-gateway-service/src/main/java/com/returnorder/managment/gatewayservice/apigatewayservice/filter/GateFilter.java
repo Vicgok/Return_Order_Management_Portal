@@ -40,12 +40,9 @@ public class GateFilter extends AbstractGatewayFilterFactory<GateFilter.Config> 
 
             try {
                 if (jwtUtility.validateToken(jwtToken)) {
-                    log.debug("Expires on " + jwtUtility.getExpirationDate(jwtToken));
-                    log.debug("Username " + jwtUtility.getUsername(jwtToken));
                     return chain.filter(exchange);
                 } else {
                     serverHttpResponse.setStatusCode(HttpStatus.UNAUTHORIZED);
-                    log.debug("Username " + jwtUtility.getUsername(jwtToken));
                     return serverHttpResponse.setComplete();
                 }
             }catch(RuntimeException e){

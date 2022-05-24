@@ -4,7 +4,7 @@ COPY src /project/src
 COPY pom.xml /project
 RUN mvn -file /project/pom.xml clean package -Dmaven.test.skip
 
-FROM openjdk:18-jdk-slim
+FROM eclipse-temurin:17-jre-alpine
 WORKDIR ./
 COPY --from=mvnbuild /project/target/authorization-service-executable.jar ./
 EXPOSE 8992
