@@ -1,8 +1,8 @@
-package com.returnorder.managment.packaginganddeliveryservice.packaginganddeliveryservice.service;
+package com.returnorder.managment.packaginganddeliveryservice.service;
 
-import com.returnorder.managment.packaginganddeliveryservice.packaginganddeliveryservice.dto.ProcessRequestDto;
-import com.returnorder.managment.packaginganddeliveryservice.packaginganddeliveryservice.dto.ProcessResponseDto;
-import com.returnorder.managment.packaginganddeliveryservice.packaginganddeliveryservice.exception.ComponentNotFoundException;
+import com.returnorder.managment.packaginganddeliveryservice.dto.ProcessRequestDto;
+import com.returnorder.managment.packaginganddeliveryservice.dto.ProcessResponseDto;
+import com.returnorder.managment.packaginganddeliveryservice.exception.ComponentNotFoundException;
 import org.springframework.stereotype.Service;
 
 @Service

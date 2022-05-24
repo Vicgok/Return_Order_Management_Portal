@@ -1,9 +1,9 @@
-package com.returnorder.managment.packaginganddeliveryservice.packaginganddeliveryservice.controller;
+package com.returnorder.managment.packaginganddeliveryservice.controller;
 
 
-import com.returnorder.managment.packaginganddeliveryservice.packaginganddeliveryservice.dto.ProcessRequestDto;
-import com.returnorder.managment.packaginganddeliveryservice.packaginganddeliveryservice.dto.ProcessResponseDto;
-import com.returnorder.managment.packaginganddeliveryservice.packaginganddeliveryservice.service.PackagingAndDeliveryService;
+import com.returnorder.managment.packaginganddeliveryservice.dto.ProcessRequestDto;
+import com.returnorder.managment.packaginganddeliveryservice.dto.ProcessResponseDto;
+import com.returnorder.managment.packaginganddeliveryservice.service.PackagingAndDeliveryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;

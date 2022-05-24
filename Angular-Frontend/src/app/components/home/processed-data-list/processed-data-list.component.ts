@@ -1,5 +1,5 @@
-import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core'
-import { BehaviorSubject, catchError, EMPTY, Subscription } from 'rxjs'
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core'
+import { catchError, EMPTY } from 'rxjs'
 import { ProcessedComponentData } from 'src/app/model/processed-component-data.model'
 import { ApiCallService } from 'src/app/service/apiServices/api-call.service'
 import { DataService } from 'src/app/service/data.service'

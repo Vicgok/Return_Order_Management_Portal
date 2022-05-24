@@ -1,4 +1,4 @@
-import { HttpClientModule, HttpHeaders, HTTP_INTERCEPTORS } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http'
 import { NgModule } from '@angular/core'
 import { ReactiveFormsModule } from '@angular/forms'
 import { BrowserModule } from '@angular/platform-browser'
@@ -12,7 +12,6 @@ import { RedirectToLoginUserService } from './service/routeGuardService/redirect
 import { CommonModule } from '@angular/common'
 import { ProcessedDataListComponent } from './components/home/processed-data-list/processed-data-list.component'
 import { UserSignupComponent } from './components/user-signup/user-signup.component'
-import { ErrorInterceptor } from './service/httpInterceptorsService/error.interceptor'
 
 @NgModule({
   declarations: [AppComponent, UserLoginComponent, HomeComponent, ProcessedDataListComponent, UserSignupComponent],
@@ -21,31 +20,28 @@ import { ErrorInterceptor } from './service/httpInterceptorsService/error.interc
     CommonModule,
     ReactiveFormsModule,
     HttpClientModule,
-    RouterModule.forRoot([
-      {
-        path: '',
-        component: HomeComponent,
-        canActivate: [RedirectToLoginUserService],
-      },
-      {
-        path: 'login',
-        component: UserLoginComponent,
-        canActivate: [LoginCheckGuardService],
-      },
-      {
-        path: 'signup',
-        component: UserSignupComponent,
-        canActivate: [LoginCheckGuardService],
-      },
-    ]),
+    RouterModule.forRoot(
+      [
+        {
+          path: '',
+          component: HomeComponent,
+          canActivate: [RedirectToLoginUserService],
+        },
+        {
+          path: 'login',
+          component: UserLoginComponent,
+          canActivate: [LoginCheckGuardService],
+        },
+        {
+          path: 'signup',
+          component: UserSignupComponent,
+          canActivate: [LoginCheckGuardService],
+        },
+      ],
+      { useHash: true }
+    ),
   ],
-  providers: [
-    // {
-    //   provide: HTTP_INTERCEPTORS,
-    //   useClass: ErrorInterceptor,
-    //   multi: true,
-    // },
-  ],
+  providers: [],
 
   bootstrap: [AppComponent],
 })

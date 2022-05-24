@@ -1,13 +1,12 @@
-import { Injectable } from '@angular/core'
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http'
+import { Injectable } from '@angular/core'
+import { map } from 'rxjs/operators'
+import { SignUpData } from 'src/app/model/sign-up-data.model'
 import { LoginData } from '../../model/login-data.model'
-import { catchError, map } from 'rxjs/operators'
 import { OrderComponent } from '../../model/order-component.model'
 import { DataService } from '../data.service'
-import { ApiUriService } from './api-uri.service'
 import { NavigateRouteService } from '../navigate-route.service'
-import { SignUpData } from 'src/app/model/sign-up-data.model'
-import { of } from 'rxjs'
+import { ApiUriService } from './api-uri.service'
 
 @Injectable({
   providedIn: 'root',

@@ -1,4 +1,4 @@
-package com.returnorder.managment.packaginganddeliveryservice.packaginganddeliveryservice;
+package com.returnorder.managment.packaginganddeliveryservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
