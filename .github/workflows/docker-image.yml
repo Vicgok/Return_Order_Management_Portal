@@ -1,27 +1,22 @@
-name: Docker Image CI
+name: Build and Publish
 
 on:
+  # run it on push to the default repository branch
   push:
-    branches: [ main ]
+    branches: [main]
+  # run it during pull request
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
-
   build:
-
     runs-on: ubuntu-latest
-
+    
+    
+      # steps to perform in job
     steps:
-      - uses: actions/checkout@v2
-        name: Check out code
-        
-      - name: Build docker images using cache
-        uses: whoan/docker-build-with-cache-action@v5
-        with:
-            username: "${{ secrets.DOCKER_HUB_USERNAME }}"
-            password: "${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}"
-            image_name: vicgok/return-order-portal-app
-            image_tag: latest
-            dockerfile: Angular-Frontend/Dockerfile       
+    - uses: actions/checkout@v2
+    - name: Build the Docker image
+      run: docker build --file Angular-Frontend/Dockerfile --tag vicgok/return-order-portal-app:latest .
 
+      
