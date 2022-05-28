@@ -11,15 +11,17 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./Angular-Frontend
+#     defaults:
+#       run:
+#         working-directory: ./Angular-Frontend
     
     
       # steps to perform in job
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker image
-      run: docker build --file Dockerfile --tag vicgok/return-order-portal-app:latest .
+      run: |
+            working-directory: ./Angular-Frontend
+            docker build --file Dockerfile --tag vicgok/return-order-portal-app:latest .
 
       
