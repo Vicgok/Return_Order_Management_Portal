@@ -1,6 +1,6 @@
 FROM node:18.2.0-alpine3.14 AS build
 WORKDIR /angular-app
-COPY . /angular-app
+COPY . .
 RUN npm install
 RUN npm install -g @angular/cli && npm run build --omit=dev
 
