@@ -23,6 +23,6 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v2
         with:
-          file: Return_Order_Management_Portal/Angular-Frontend/Dockerfile
+          file: Return_Order_Management_Portal/Angular-Frontend/
           push: true
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/return-order-portal-app:latest
