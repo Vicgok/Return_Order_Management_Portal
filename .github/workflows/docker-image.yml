@@ -13,6 +13,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - uses: actions/checkout@v2
+        name: Check out code
+        
+      - name: Cache Docker layers
+        uses: actions/cache@v2
+      
       - uses: mr-smithers-excellent/docker-build-push@v5
         name: Build & push Docker image
         with:
