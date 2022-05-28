@@ -15,17 +15,13 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         name: Check out code
-      
-      - uses: satackey/action-docker-layer-caching@v0.0.11
-      # Ignore the failure of a step and avoid terminating the job.
-        continue-on-error: true
-      
-      - uses: mr-smithers-excellent/docker-build-push@v5
-        name: Build & push Docker image
+        
+      - name: Build docker images using cache
+        uses: whoan/docker-build-with-cache-action@v5
         with:
-          image: vicgok/return-order-portal-app
-          tags: latest
-          registry: docker.io
-          dockerfile: Angular-Frontend/Dockerfile
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
+            username: "${{ secrets.DOCKER_HUB_USERNAME }}"
+            password: "${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}"
+            image_name: vicgok/return-order-portal-app
+            image_tag: latest
+            dockerfile: Angular-Frontend/Dockerfile       
+
