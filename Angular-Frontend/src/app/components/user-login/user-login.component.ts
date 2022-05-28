@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core'
-import { FormControl, FormGroup, ValidatorFn, Validators } from '@angular/forms'
+import { FormControl, FormGroup, Validators } from '@angular/forms'
 import { Title } from '@angular/platform-browser'
 import { EMPTY } from 'rxjs'
 import { catchError } from 'rxjs/operators'
-import { ErrorData } from 'src/app/model/error-data.model'
-import { DataService } from 'src/app/service/data.service'
 import { NavigateRouteService } from 'src/app/service/navigate-route.service'
 import { LoginData } from '../../model/login-data.model'
 import { ApiCallService } from '../../service/apiServices/api-call.service'
@@ -24,12 +22,7 @@ export class UserLoginComponent implements OnInit {
   })
 
   userLoginData: LoginData = new LoginData('', '')
-  constructor(
-    private apiCallService: ApiCallService,
-    private navigateRoute: NavigateRouteService,
-    private dataService: DataService,
-    private titleService: Title
-  ) {}
+  constructor(private apiCallService: ApiCallService, private navigateRoute: NavigateRouteService, private titleService: Title) {}
 
   ngOnInit(): void {
     this.titleService.setTitle('Login - Return order managment')

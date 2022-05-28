@@ -1,6 +1,5 @@
 package com.returnorder.managment.authorizationservice.controller;
 
-import com.returnorder.managment.authorizationservice.dto.JwtTokenDTO;
 import com.returnorder.managment.authorizationservice.dto.StringToObjectDTO;
 import com.returnorder.managment.authorizationservice.dto.UserRegisterDetailsDTO;
 import com.returnorder.managment.authorizationservice.exception.BadCredentialsException;
@@ -14,12 +13,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.AuthenticationException;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
+@CrossOrigin("/*")
 @RequestMapping("/auth")
 public class AuthController {
 
