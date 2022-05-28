@@ -18,6 +18,6 @@ jobs:
           image: vicgok/return-order-portal-app
           tags: latest
           registry: docker.io
-          dockerfile: /Angular-frontend/Dockerfile
+          dockerfile: /Angular-Frontend/Dockerfile
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
