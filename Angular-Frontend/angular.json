@@ -107,5 +107,8 @@
       }
     }
   },
-  "defaultProject": "return-order-managment-portal"
+  "defaultProject": "return-order-managment-portal",
+  "cli": {
+    "analytics": "48ba6421-5e49-4c2a-95a9-2675fc364348"
+  }
 }
