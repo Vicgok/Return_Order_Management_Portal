@@ -8,8 +8,8 @@ spring:
       server:
         git:
           uri: https://github.com/Vicgok/ReturnOrderPortal_ConfigServer.git
-          username: vicgok
-          password: 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
+          username: 
+          password: 
           cloneOnStart: true
 
 server:
